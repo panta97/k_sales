@@ -1,0 +1,25 @@
+@import '../styles/variables';
+
+$icon-size: 36px;
+$sync-icon-text-gap: 5px;
+$sync-text-font-size: 12px;
+
+.sync-section {
+  margin-top: $body-padding-top;
+  margin-right: $body-padding-right;
+  text-align: right;
+
+  .sync-icon {
+    display: inline-block;
+    width: $icon-size;
+    height: $icon-size;
+    mask: url('./icons/sync.svg');
+    background-color: $font-color-light;
+  }
+
+  .sync-details {
+    margin: 0;
+    margin-top: $sync-icon-text-gap;
+    font-size: $sync-text-font-size;
+  }
+}

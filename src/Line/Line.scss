@@ -1,0 +1,40 @@
+@import '../styles/variables';
+
+$line-height: 6px;
+$line-width: 260px;
+$line-border-radius: 5px;
+$line-bottom-space: 35px;
+
+
+.line-percentage {
+  // border: 1px solid magenta;
+  border-radius: $line-border-radius;
+  width: $line-width;
+  height: $line-height;
+  position: absolute;
+  bottom: $line-bottom-space;
+  right: $body-padding-right;
+  display: flex;
+
+  div {
+    height: $line-height;
+  }
+
+  div:first-child {
+    border-radius: $line-border-radius 0 0 $line-border-radius;
+  }
+
+  div:last-child {
+    border-radius: 0 $line-border-radius $line-border-radius 0;
+  }
+}
+
+.line-percentage-ab {
+  background-color: $ab-bg-color-light;
+  width: 200px;
+}
+
+.line-percentage-sm {
+  background-color: $sm-bg-color-light;
+  width: 60px;
+}
