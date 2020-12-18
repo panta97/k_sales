@@ -27,5 +27,10 @@ $view-btn-title-sep: 3px;
           align-items: center;
           cursor: pointer;
         }
+
+        .view-btn-active {
+          background-color: $font-color-light;
+          color: $view-sq-bg-color-light;
+        }
     }
 }

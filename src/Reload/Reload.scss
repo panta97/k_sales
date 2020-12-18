@@ -15,6 +15,7 @@ $sync-text-font-size: 12px;
     height: $icon-size;
     mask: url('./icons/sync.svg');
     background-color: $font-color-light;
+    cursor: pointer;
   }
 
   .sync-details {
@@ -22,4 +23,17 @@ $sync-text-font-size: 12px;
     margin-top: $sync-icon-text-gap;
     font-size: $sync-text-font-size;
   }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  animation: rotating 2s linear infinite;
 }

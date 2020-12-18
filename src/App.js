@@ -1,18 +1,63 @@
+import { useState, useEffect } from 'react';
+import './App.scss';
+import now from "./utils/now"
+import getSales from "./api/sales";
 import Stores from "./Stores/Stores";
 import ViewGroup from "./ViewGroup/ViewGroup";
 import Reload from "./Reload/Reload";
 import Line from "./Line/Line";
-import './App.scss';
 
 
 function App() {
+
+  const [sales, setSales] = useState([]);
+  const [view, setView] = useState('n');
+  const [isSyncing, setIsSyncing] = useState(false);
+  const [lastUpdate, setLastUpdate] = useState('');
+
+  const updateView = (viewType) => {
+    setView(viewType);
+  }
+
+  const updateSyncing = (val) => {
+    setIsSyncing(val);
+  }
+
+  const getDataFromAPI = async () => {
+    // GET SALES IF QUERY STRING IS SET IN URL
+    const params = new URLSearchParams(window.location.search)
+    if (params.has('api')) {
+      updateSyncing(true);
+      setSales(await getSales(params));
+      updateSyncing(false);
+    }
+  }
+
+  useEffect(() => {
+    getDataFromAPI();
+  }, []);
+
+  useEffect(() => {
+    if (!isSyncing && sales.length)
+      setLastUpdate(now());
+  }, [isSyncing])
+
   return (
     <div>
-      <Reload/>
+      <Reload
+        getDataFromAPI={getDataFromAPI}
+        isSyncing={isSyncing}
+        lastUpdate={lastUpdate}
+      />
       <h1 className="main-title">sales of today</h1>
-      <ViewGroup/>
-      <Stores/>
-      <Line/>
+      <ViewGroup
+        view={view}
+        updateView={updateView}/>
+      <Stores
+        sales={sales}
+        view={view}/>
+      <Line
+        sales={sales}/>
       <div className="line-deco"></div>
     </div>
   );

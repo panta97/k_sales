@@ -1,10 +1,12 @@
 import "./Reload.scss";
 
-function Reload() {
+function Reload({getDataFromAPI, isSyncing, lastUpdate}) {
   return (
     <div className="sync-section">
-      <span className="sync-icon"/>
-      <p className="sync-details">last update at 19:36</p>
+      <span
+        onClick={_ => getDataFromAPI()}
+        className={`sync-icon ${isSyncing ? 'rotating' : ''}`}/>
+      <p className="sync-details">{`last update at ${lastUpdate}`}</p>
     </div>
   );
 }

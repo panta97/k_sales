@@ -11,6 +11,7 @@ $line-bottom-space: 35px;
   border-radius: $line-border-radius;
   width: $line-width;
   height: $line-height;
+  background-color: $view-sq-bg-color-light;
   position: absolute;
   bottom: $line-bottom-space;
   right: $body-padding-right;
@@ -29,12 +30,10 @@ $line-bottom-space: 35px;
   }
 }
 
-.line-percentage-ab {
+.ab-store {
   background-color: $ab-bg-color-light;
-  width: 200px;
 }
 
-.line-percentage-sm {
+.sm-store {
   background-color: $sm-bg-color-light;
-  width: 60px;
 }

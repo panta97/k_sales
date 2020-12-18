@@ -1,10 +1,16 @@
 import './Line.scss';
 
-function Line() {
+function Line({sales}) {
+  const totalSales = sales.reduce((acc, curr) => acc += curr['amount'] , 0);
+  const lineWidth = 260;
   return (
     <div className="line-percentage">
-      <div className="line-percentage-ab"></div>
-      <div className="line-percentage-sm"></div>
+      {sales.map(({code, amount}) => (
+        <div
+          key={code}
+          style={{'width': `${amount/totalSales * lineWidth}px`}}
+          className={code}/>
+      ))}
     </div>
   )
 }
