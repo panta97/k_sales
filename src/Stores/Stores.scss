@@ -12,3 +12,17 @@
 .tt-store {
     background-color: $tt-bg-color-light;
 }
+
+@media (prefers-color-scheme: dark) {
+  .ab-store {
+      background-color: $ab-bg-color-dark;
+  }
+
+  .sm-store {
+      background-color: $sm-bg-color-dark;
+  }
+
+  .tt-store {
+      background-color: $tt-bg-color-dark;
+  }
+}

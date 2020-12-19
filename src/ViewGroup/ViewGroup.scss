@@ -34,3 +34,21 @@ $view-btn-title-sep: 3px;
         }
     }
 }
+
+@media (prefers-color-scheme: dark) {
+  .view-group {
+
+      .view-group-btns {
+          display: flex;
+
+          .view-btn {
+            background-color: $view-sq-bg-color-dark;
+          }
+
+          .view-btn-active {
+            background-color: $font-color-dark;
+            color: $view-sq-bg-color-dark;
+          }
+      }
+  }
+}

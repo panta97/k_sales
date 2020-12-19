@@ -28,12 +28,27 @@ $line-bottom-space: 35px;
   div:last-child {
     border-radius: 0 $line-border-radius $line-border-radius 0;
   }
+
+  .ab-store {
+    background-color: $ab-bg-color-light;
+  }
+
+  .sm-store {
+    background-color: $sm-bg-color-light;
+  }
 }
 
-.ab-store {
-  background-color: $ab-bg-color-light;
-}
 
-.sm-store {
-  background-color: $sm-bg-color-light;
+@media (prefers-color-scheme: dark) {
+  .line-percentage {
+    background-color: $view-sq-bg-color-dark;
+
+    .ab-store {
+      background-color: $ab-bg-color-dark;
+    }
+
+    .sm-store {
+      background-color: $sm-bg-color-dark;
+    }
+  }
 }

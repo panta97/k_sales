@@ -5,6 +5,14 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   color: $font-color-light;
+  background-color: $background-color-light;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: $font-color-dark;
+    background-color: $background-color-dark;
+  }
 }

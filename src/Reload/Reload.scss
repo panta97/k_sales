@@ -37,3 +37,11 @@ $sync-text-font-size: 12px;
 .rotating {
   animation: rotating 2s linear infinite;
 }
+
+@media (prefers-color-scheme: dark) {
+  .sync-section {
+    .sync-icon {
+      background-color: $font-color-dark;
+    }
+  }
+}
