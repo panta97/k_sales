@@ -11,11 +11,13 @@ import Line from "./Line/Line";
 function App() {
 
   const [sales, setSales] = useState([]);
-  const [view, setView] = useState('n');
+  const viewTypeLS = localStorage.getItem('viewType');
+  const [view, setView] = useState(viewTypeLS ? viewTypeLS : 'n');
   const [isSyncing, setIsSyncing] = useState(false);
   const [lastUpdate, setLastUpdate] = useState('');
 
   const updateView = (viewType) => {
+    localStorage.setItem('viewType', viewType);
     setView(viewType);
   }
 
