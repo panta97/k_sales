@@ -2,27 +2,13 @@
 
 
 .ab-store {
-    background-color: $ab-bg-color-light;
+    background-color: var(--ab-bg-color);
 }
 
 .sm-store {
-    background-color: $sm-bg-color-light;
+    background-color: var(--sm-bg-color);
 }
 
 .tt-store {
-    background-color: $tt-bg-color-light;
-}
-
-@media (prefers-color-scheme: dark) {
-  .ab-store {
-      background-color: $ab-bg-color-dark;
-  }
-
-  .sm-store {
-      background-color: $sm-bg-color-dark;
-  }
-
-  .tt-store {
-      background-color: $tt-bg-color-dark;
-  }
+    background-color: var(--tt-bg-color);
 }

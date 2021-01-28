@@ -6,7 +6,7 @@ $bottom-gap: 10px;
 $view-btn-title-sep: 3px;
 
 .view-group {
-    margin-left: $line-deco-width;
+    margin-left: var(--line-deco-width);
     margin-bottom: $bottom-gap;
 
     .view-group-title {
@@ -21,7 +21,7 @@ $view-btn-title-sep: 3px;
           margin-right: $view-btn-gap;
           width: $view-btn-size;
           height: $view-btn-size;
-          background-color: $view-sq-bg-color-light;
+          background-color: var(--view-sq-bg-color);
           display: flex;
           justify-content: center;
           align-items: center;
@@ -29,26 +29,8 @@ $view-btn-title-sep: 3px;
         }
 
         .view-btn-active {
-          background-color: $font-color-light;
-          color: $view-sq-bg-color-light;
+          background-color: var(--font-color);
+          color: var(--view-sq-bg-color);
         }
     }
-}
-
-@media (prefers-color-scheme: dark) {
-  .view-group {
-
-      .view-group-btns {
-          display: flex;
-
-          .view-btn {
-            background-color: $view-sq-bg-color-dark;
-          }
-
-          .view-btn-active {
-            background-color: $font-color-dark;
-            color: $view-sq-bg-color-dark;
-          }
-      }
-  }
 }

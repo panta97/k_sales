@@ -5,8 +5,8 @@ $sync-icon-text-gap: 5px;
 $sync-text-font-size: 12px;
 
 .sync-section {
-  margin-top: $body-padding-top;
-  margin-right: $body-padding-right;
+  margin-top: var(--body-padding-top);
+  margin-right: var(--body-padding-right);
   text-align: right;
 
   .sync-icon {
@@ -14,7 +14,7 @@ $sync-text-font-size: 12px;
     width: $icon-size;
     height: $icon-size;
     mask: url('./icons/sync.svg');
-    background-color: $font-color-light;
+    background-color: var(--font-color);
     cursor: pointer;
   }
 
@@ -36,12 +36,4 @@ $sync-text-font-size: 12px;
 
 .rotating {
   animation: rotating 2s linear infinite;
-}
-
-@media (prefers-color-scheme: dark) {
-  .sync-section {
-    .sync-icon {
-      background-color: $font-color-dark;
-    }
-  }
 }

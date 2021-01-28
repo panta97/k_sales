@@ -14,8 +14,8 @@ $store-line-font-weight: 700;
     display: flex;
     justify-content: space-between;
     padding-top: $store-line-top-space;
-    padding-left: $line-deco-width;
-    padding-right: $body-padding-right;
+    padding-left: var(--line-deco-width);
+    padding-right: var(--body-padding-right);
     margin-bottom: $store-line-gap;
 
     p {
