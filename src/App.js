@@ -51,7 +51,7 @@ function App() {
         isSyncing={isSyncing}
         lastUpdate={lastUpdate}
       />
-      <h1 className="main-title">sales of today</h1>
+      <h1 className="main-title">today's sales</h1>
       <ViewGroup
         view={view}
         updateView={updateView}/>
