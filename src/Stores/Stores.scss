@@ -1,14 +1,17 @@
-@import '../styles/variables';
-
+@import "../styles/variables";
 
 .ab-store {
-    background-color: var(--ab-bg-color);
+  background-color: var(--ab-bg-color);
 }
 
 .sm-store {
-    background-color: var(--sm-bg-color);
+  background-color: var(--sm-bg-color);
+}
+
+.ol-store {
+  background-color: var(--ol-bg-color);
 }
 
 .tt-store {
-    background-color: var(--tt-bg-color);
+  background-color: var(--tt-bg-color);
 }

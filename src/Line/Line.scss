@@ -1,10 +1,9 @@
-@import '../styles/variables';
+@import "../styles/variables";
 
 $line-height: 6px;
 $line-width: 260px;
 $line-border-radius: 5px;
 $line-bottom-space: 35px;
-
 
 .line-percentage {
   // border: 1px solid magenta;
@@ -35,5 +34,9 @@ $line-bottom-space: 35px;
 
   .sm-store {
     background-color: var(--sm-bg-color);
+  }
+
+  .ol-store {
+    background-color: var(--ol-bg-color);
   }
 }
