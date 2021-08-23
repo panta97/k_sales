@@ -4,7 +4,7 @@ function Line({sales}) {
   const totalSales = sales.reduce((acc, curr) => acc += curr['amount'] , 0);
   return (
     <div className="line-percentage">
-      {sales.map(({code, amount}) => (
+      {sales.filter(({amount}) => amount > 0).map(({code, amount}) => (
         <div
           key={code}
           style={{'width': `${amount/totalSales*100}%`}}

@@ -21,11 +21,13 @@ $line-bottom-space: 35px;
   }
 
   div:first-child {
-    border-radius: $line-border-radius 0 0 $line-border-radius;
+    border-top-left-radius: $line-border-radius;
+    border-bottom-left-radius: $line-border-radius;
   }
 
   div:last-child {
-    border-radius: 0 $line-border-radius $line-border-radius 0;
+    border-top-right-radius: $line-border-radius;
+    border-bottom-right-radius: $line-border-radius;
   }
 
   .ab-store {
