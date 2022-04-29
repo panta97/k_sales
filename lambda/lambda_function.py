@@ -36,7 +36,7 @@ def lambda_handler(event, context):
 
     total_ab = 0
     total_sm = 0
-    total_ol = 0
+    total_tg = 0
 
     for invoice in invoices:
         serie = re.search("^.+([B|F][A|0]0\d).+$", invoice["journal_id"][1]).group(1)
@@ -49,20 +49,28 @@ def lambda_handler(event, context):
                 "B004",
                 "B005",
                 "B006",
+                "B007",
+                "B008",
                 "F001",
                 "F003",
                 "F004",
                 "F005",
+                "F006",
+                "F007",
+                "F008",
             ]:
                 total_ab += invoice["amount_total"]
             elif serie in ["B002", "F002"]:
                 total_sm += invoice["amount_total"]
-            elif serie == "BA01":
-                total_ab -= invoice["amount_total"]
-            elif serie == "BA02":
-                total_sm -= invoice["amount_total"]
-        elif company_id == 3:  ## olympo
-            total_ol += invoice["amount_total"]
+            # elif serie == "BA01":
+            #     total_ab -= invoice["amount_total"]
+            # elif serie == "BA02":
+            #     total_sm -= invoice["amount_total"]
+            elif serie in ["B009", "B010", "F009", "F010"]:
+                total_tg += invoice["amount_total"]
+        # elif company_id == 3:  ## olympo
+        #     if serie in ["B001", "F001"]:
+        #         total_ol += invoice["amount_total"]
 
     totals = [
         {
@@ -76,9 +84,9 @@ def lambda_handler(event, context):
             "amount": total_sm,
         },
         {
-            "code": "ol-store",
-            "name": "olympo",
-            "amount": total_ol,
+            "code": "tg-store",
+            "name": "tingo",
+            "amount": total_tg,
         },
     ]
 
@@ -86,6 +94,3 @@ def lambda_handler(event, context):
         "statusCode": 200,
         "body": totals,
     }
-
-
-lambda_handler(None, None)

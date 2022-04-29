@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
-import './App.scss';
-import now from "./utils/now"
+import { useEffect, useState } from 'react';
 import getSales from "./api/sales";
-import Stores from "./Stores/Stores";
-import ViewGroup from "./ViewGroup/ViewGroup";
-import Reload from "./Reload/Reload";
+import './App.scss';
 import Line from "./Line/Line";
+import Reload from "./Reload/Reload";
+import Stores from "./Stores/Stores";
+import now from "./utils/now";
+import ViewGroup from "./ViewGroup/ViewGroup";
 
 
 function App() {
