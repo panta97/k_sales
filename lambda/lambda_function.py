@@ -39,7 +39,7 @@ def lambda_handler(event, context):
     total_tg = 0
 
     for invoice in invoices:
-        serie = re.search("^.+([B|F][A|0]0\d).+$", invoice["journal_id"][1]).group(1)
+        serie = re.search("^.+([B|F][A|0]\d{2}).+$", invoice["journal_id"][1]).group(1)
         company_id = invoice["company_id"][0]
 
         if company_id == 1:  ## kdosh
@@ -66,7 +66,7 @@ def lambda_handler(event, context):
             #     total_ab -= invoice["amount_total"]
             # elif serie == "BA02":
             #     total_sm -= invoice["amount_total"]
-            elif serie in ["B009", "B010", "F009", "F010"]:
+            elif serie in ["B009", "B010", "B011", "F009", "F010", "F011"]:
                 total_tg += invoice["amount_total"]
         # elif company_id == 3:  ## olympo
         #     if serie in ["B001", "F001"]:
